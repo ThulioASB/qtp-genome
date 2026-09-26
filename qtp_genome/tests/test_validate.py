@@ -15,8 +15,6 @@ from json import dumps
 from functools import partial
 
 import numpy as np
-from biom import Table, load_table
-from biom.util import biom_open
 from qiita_client import ArtifactInfo
 from qiita_client.testing import PluginTestCase
 

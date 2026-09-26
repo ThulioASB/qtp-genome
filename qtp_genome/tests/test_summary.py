@@ -12,7 +12,6 @@ from os import remove, makedirs
 from os.path import exists, isdir, join
 from shutil import rmtree
 from json import dumps
-from skbio.tree import TreeNode
 
 from qiita_client.testing import PluginTestCase
 
