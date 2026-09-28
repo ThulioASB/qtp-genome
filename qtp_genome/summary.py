@@ -5,7 +5,7 @@ from .validate import collect_assembly_stats, collect_contig_stats, collect_anno
 
 
 def createHTML(df_assemblystats, df_contigstats, df_annotstats=None, custom_annotations=None):
-    # Extração segura das métricas para os cards do topo
+    # Safe extraction of key metrics for top summary cards
     total_seqs = '-'
     for col in ['num_seqs', 'num_seqs_stat', 'n_contigs']:
         if col in df_assemblystats.columns:
@@ -24,7 +24,7 @@ def createHTML(df_assemblystats, df_contigstats, df_annotstats=None, custom_anno
             gc_percent = df_assemblystats[col].values[0]
             break
 
-    # Dados dos contigs para o gráfico Chart.js (pega os 15 maiores)
+    # Contig data for Chart.js visualization (top 15 longest contigs)
     id_col = '#id' if '#id' in df_contigstats.columns else df_contigstats.columns[0]
     len_col = 'length' if 'length' in df_contigstats.columns else df_contigstats.columns[1]
 
