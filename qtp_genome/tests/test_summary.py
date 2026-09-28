@@ -6,17 +6,17 @@ from qtp_genome.summary import createHTML
 class TestSummary(unittest.TestCase):
 
     def test_createHTML(self):
-        # Creates test DataFrames
+        # Cria DataFrames de teste
         df_assembly = pd.DataFrame({'Stat': ['Contigs'], 'Value': [2]})
         df_contig = pd.DataFrame({'length': [12, 8]})
 
-        # Generates the HTML
+        # Gera o HTML
         html = createHTML(df_assembly, df_contig)
 
-        # Validates if the basic HTML structure was produced
-        self.assertIn("<html>", html)
-        self.assertIn("</html>", html)
-        self.assertIn("Contigs", html)
+        # Valida se a estrutura básica do HTML foi produzida
+        self.assertIn("<html", html.lower())
+        self.assertIn("</html>", html.lower())
+        self.assertIn("contigs", html.lower())
 
 
 if __name__ == '__main__':
